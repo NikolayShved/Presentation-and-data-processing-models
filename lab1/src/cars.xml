@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cars>
+    <car>
+        <carModel>Lada</carModel>
+        <carName>Vesta</carName>
+        <price>600000</price>
+        <seats>5</seats>
+        <volumeGasoline>55</volumeGasoline>
+    </car>
+    <car>
+        <carModel>Daewoo</carModel>
+        <carName>Nexia</carName>
+        <price>175000</price>
+        <seats>4</seats>
+        <volumeGasoline>50</volumeGasoline>
+    </car>
+    <car>
+        <carModel>Renault</carModel>
+        <carName>Duster</carName>
+        <price>700000</price>
+        <seats>5</seats>
+        <volumeGasoline>50</volumeGasoline>
+    </car>
+</cars>
