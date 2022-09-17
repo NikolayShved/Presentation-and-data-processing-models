@@ -3,6 +3,7 @@ package com.company;
 import com.company.converter.CarConverter;
 import com.company.entity.Car;
 import com.company.entity.Student;
+import com.company.jframe.CarList;
 import com.company.jframe.CarTable;
 import org.xml.sax.SAXException;
 
@@ -24,5 +25,6 @@ public class Main {
 
         ArrayList<Car> carArrayForJTable = CarConverter.convertListMapToListCar(arrayCars);
         new CarTable(carArrayForJTable);
+        new CarList(carArrayForJTable);
     }
 }

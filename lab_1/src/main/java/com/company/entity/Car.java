@@ -47,4 +47,13 @@ public class Car {
     public void setVolumeGasoline(float volumeGasoline) {
         this.volumeGasoline = volumeGasoline;
     }
+
+    @Override
+    public String toString() {
+        return "Модель - '" + carModel + "'\n" +
+                ", Название - '" + carName + "'\n" +
+                ", Цена - " + price + "\n" +
+                ", Кол. мест - " + seats + "\n" +
+                ", Объем бака - " + volumeGasoline + "\n";
+    }
 }
