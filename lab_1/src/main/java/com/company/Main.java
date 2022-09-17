@@ -23,6 +23,6 @@ public class Main {
         System.out.println(arrayCars);
 
         ArrayList<Car> carArrayForJTable = CarConverter.convertListMapToListCar(arrayCars);
-        new CarTable();
+        new CarTable(carArrayForJTable);
     }
 }
