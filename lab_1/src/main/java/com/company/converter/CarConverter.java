@@ -1,6 +1,8 @@
-package com.company;
+package com.company.converter;
 
-import com.company.entity.Student;
+import com.company.entity.Car;
+import com.google.gson.Gson;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -13,20 +15,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class Main {
+public class CarConverter {
 
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-
-        Student studentFromIniFile = new Student();
-        System.out.println(studentFromIniFile);
-
+    public static List<HashMap> convertXmlFileToListMap() throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         // Создаётся экземпляр DocumentBuilder
         DocumentBuilder builder = builderFactory.newDocumentBuilder();
         // Создаётся экземпляр документа DOM из XML-файла
-        Document document = builder.parse("./src/cars.xml");
+        Document document = builder.parse("./src/main/resources/cars.xml");
 
         // Получаем корневой элемент '<cars>'
         Node rootElement = document.getDocumentElement();
@@ -61,6 +58,17 @@ public class Main {
                 arrayCars.add(mapCarProperties);
             }
         }
-        System.out.println(arrayCars);
+
+        return arrayCars;
+    }
+
+    public static ArrayList<Car> convertListMapToListCar(List<HashMap> cars){
+        ArrayList<Car> listCars = new ArrayList<>();
+        for (HashMap<String, String> car: cars) {
+            JSONObject jsonObject = new JSONObject(car);
+            Car carObject = new Gson().fromJson(String.valueOf(jsonObject), Car.class);
+            listCars.add(carObject);
+        }
+        return listCars;
     }
 }

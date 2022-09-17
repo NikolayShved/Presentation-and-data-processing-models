@@ -1,6 +1,5 @@
 package com.company.entity;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -19,7 +18,7 @@ public class Student {
 
         // Initialization and read the Student.ini file
         Properties properties = new Properties();
-        properties.load(new FileInputStream("./src/Student.ini"));
+        properties.load(new FileInputStream("./src/main/resources/Student.ini"));
 
         // Write to class fields
         firstName = properties.getProperty("FIRST_NAME");
