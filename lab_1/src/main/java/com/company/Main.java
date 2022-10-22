@@ -1,10 +1,13 @@
 package com.company;
 
 import com.company.converter.CarConverter;
+import com.company.converter.StudentConverter;
 import com.company.entity.Car;
 import com.company.entity.Student;
-import com.company.jframe.CarList;
-import com.company.jframe.CarTable;
+import com.company.jframe.jlist.CarList;
+import com.company.jframe.jtable.CarTable;
+import com.company.jframe.jlist.StudentList;
+import com.company.jframe.jtable.StudentTable;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -17,14 +20,17 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
 
-        Student studentFromIniFile = new Student();
+        List<Student> studentFromIniFile = StudentConverter.parseStudentList();
         System.out.println(studentFromIniFile);
 
         List<HashMap> arrayCars = CarConverter.convertXmlFileToListMap();
         System.out.println(arrayCars);
 
-        ArrayList<Car> carArrayForJTable = CarConverter.convertListMapToListCar(arrayCars);
-        new CarTable(carArrayForJTable);
-        new CarList(carArrayForJTable);
+        ArrayList<Car> carArrayForJTableAndJList = CarConverter.convertListMapToListCar(arrayCars);
+
+        new CarTable(carArrayForJTableAndJList);
+        new StudentTable(studentFromIniFile);
+        new CarList(carArrayForJTableAndJList);
+        new StudentList(studentFromIniFile);
     }
 }

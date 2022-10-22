@@ -1,9 +1,5 @@
 package com.company.entity;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
 public class Student {
 
     private String firstName;
@@ -13,23 +9,6 @@ public class Student {
     private String city;
     private String group;
     private boolean isMarriage;
-
-    public Student() throws IOException {
-
-        // Initialization and read the Student.ini file
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("./src/main/resources/Student.ini"));
-
-        // Write to class fields
-        firstName = properties.getProperty("FIRST_NAME");
-        lastName = properties.getProperty("LAST_NAME");
-        age = Integer.valueOf(properties.getProperty("AGE"));
-        country = properties.getProperty("COUNTRY");
-        city = properties.getProperty("CITY");
-        group = properties.getProperty("GROUP");
-        isMarriage = Boolean.valueOf(properties.getProperty("IS_MARRIAGE"));
-
-    }
 
     public String getFirstName() {
         return firstName;
@@ -85,5 +64,27 @@ public class Student {
 
     public void setMarriage(boolean marriage) {
         isMarriage = marriage;
+    }
+
+    public String getMarriage(boolean marriage) {
+        return marriage ? "Женат" : "Не женат";
+    }
+
+    @Override
+    public String toString() {
+        String studentInfo = "Имя - '" + firstName + "'\n" +
+                ", Фамилия - '" + lastName + "'\n" +
+                ", Возраст - " + age + "\n" +
+                ", Страна - " + country + "\n" +
+                ", Город - " + city + "\n" +
+                ", Группа - " + group + "\n";
+
+        if (isMarriage) {
+            studentInfo += ", Женат ";
+        } else {
+            studentInfo += ", Не женат ";
+        }
+
+        return studentInfo;
     }
 }

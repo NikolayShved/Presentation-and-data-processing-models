@@ -58,7 +58,6 @@ public class CarConverter {
                 arrayCars.add(mapCarProperties);
             }
         }
-
         return arrayCars;
     }
 

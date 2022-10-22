@@ -1,4 +1,4 @@
-package com.company.jframe;
+package com.company.jframe.jlist;
 
 import com.company.entity.Car;
 
@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.util.List;
 
 public class CarList extends JFrame {
+
     private DefaultListModel<Car> dlm = new DefaultListModel<Car>();
 
     public CarList(List<Car> cars)
@@ -19,7 +20,7 @@ public class CarList extends JFrame {
             dlm.add(0, car);
         }
 
-        JList<Car> list1 = new JList<Car>(dlm);
+        JList<Car> list1 = new JList<>(dlm);
 
         contents.add(new JScrollPane(list1));
 
@@ -27,5 +28,4 @@ public class CarList extends JFrame {
         setSize(600, 200);
         setVisible(true);
     }
-
 }

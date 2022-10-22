@@ -1,4 +1,4 @@
-package com.company.jframe;
+package com.company.jframe.jtable;
 
 import com.company.entity.Car;
 
@@ -13,7 +13,7 @@ public class CarTable extends JFrame {
     };
 
     public CarTable(ArrayList<Car> carArray) {
-        super("Лаб. №1 - JTable");
+        super("Автомобили");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Vector<String> header = new Vector<>();
