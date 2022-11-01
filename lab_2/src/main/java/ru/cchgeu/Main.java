@@ -20,7 +20,7 @@ public class Main {
         dbWorker.addNewKafedra(new Kafedra(4, "Иностранных языков", "252-38-56", "ул. 20-летия Октября, д.84", 50));
         dbWorker.addNewKafedra(new Kafedra(5, "Радиотехники", "243-76-65", "Московский просп., 179, корп. 3", 50));
 
-//        new KafedraTable(dbWorker.getKafedraData());
-        new KafedraTable(dbWorker.getKafedraMetaData("kafedra"));
+        new KafedraTable(dbWorker.getKafedraData("kafedra"), "Кафедры, обычный вывод");
+        new KafedraTable(dbWorker.getKafedraMetaData("kafedra"), "Кафедры (вывод с getObject)");
     }
 }

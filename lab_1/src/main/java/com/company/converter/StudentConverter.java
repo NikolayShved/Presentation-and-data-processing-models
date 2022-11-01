@@ -24,7 +24,7 @@ public class StudentConverter {
                     return section.put(key, value);
             }
 
-        }.load(new FileInputStream("./src/main/resources/Student.ini"));
+        }.load(new FileInputStream("D:/Presentation-and-data-processing-models/lab_1/src/main/resources/Student.ini"));
 
         List<Student> students = new ArrayList<>();
 

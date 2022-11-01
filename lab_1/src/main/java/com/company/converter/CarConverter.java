@@ -23,7 +23,7 @@ public class CarConverter {
         // Создаётся экземпляр DocumentBuilder
         DocumentBuilder builder = builderFactory.newDocumentBuilder();
         // Создаётся экземпляр документа DOM из XML-файла
-        Document document = builder.parse("./src/main/resources/cars.xml");
+        Document document = builder.parse("D:/Presentation-and-data-processing-models/lab_1/src/main/resources/cars.xml");
 
         // Получаем корневой элемент '<cars>'
         Node rootElement = document.getDocumentElement();

@@ -12,8 +12,8 @@ public class KafedraTable extends JFrame {
             "Id", "Аббревиатура", "Телефон", "Адрес", "Возраст"
     };
 
-    public KafedraTable(List<Kafedra> kafedraList) {
-        super("Кафедры");
+    public KafedraTable(List<Kafedra> kafedraList, String title) {
+        super(title);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Vector<String> header = new Vector<>();
